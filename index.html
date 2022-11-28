@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/style.css">
+	<title>Document</title>
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="wrapper">
+			<div class="header">
+				<form class="header__form">
+					<input class="form-input" type="text" placeholder="Введите город.">
+					<div class="form-btn">
+						<img src="/img/search.svg" alt="search">
+					</div>
+				</form>
+			</div>
+			<div class="main">
+				<div class="tabs">
+					<div class="tabs__body">
+						<div class="tabs__block" id="tab-01">
+							<div class="tabs__block__degree">14&deg;</div>
+							<div class="tabs__block__img">
+								<img src="/img/icon.svg" alt="weather-img">
+							</div>
+							<div class="tabs__block__box">
+								<div class="tabs__block__title">Aktobe</div>
+								<div class="tabs__block__like">
+									<img src="/img/like.svg" alt="like-img">
+								</div>
+							</div>
+						</div>
+						<div class="tabs__block" id="tab-02">
+							<div class="tabs__block-02 tabs__block__title">Aktobe</div>
+							<div class="tabs__block-02 tabs__block__temperature">Temperature: 14&deg;</div>
+							<div class="tabs__block-02 tabs__block__feels">Feels like: 10&deg;</div>
+							<div class="tabs__block-02 tabs__block__weather">Weather: Clouds</div>
+							<div class="tabs__block-02 tabs__block__sunrise">Sunrise: 03:21</div>
+							<div class="tabs__block-02 tabs__block__sunset">Sunset: 18:54</div>
+						</div>
+						<div class="tabs__block" id="tab-03">
+
+						</div>
+					</div>
+					<nav class="tabs__items">
+						<a class="tabs__item" href="#tab-01" target="_self">Now</a>
+						<a class="tabs__item" href="#tab-02">Details</a>
+						<a class="tabs__item" href="#tab-03">Forecast</a>
+					</nav>
+				</div>
+				<div class="right-block">
+					<div class="right-block__title">
+						Added Locations:
+					</div>
+					<ul class="right-block__list">
+						<li class="right-block__link">
+							<a href="#">
+								Amur
+							</a>
+						</li>
+						<li class="right-block__link">
+							<a href="#">
+								Samara
+							</a>
+						</li>
+						<li class="right-block__link">
+							<a href="#">
+								Bali
+							</a>
+						</li>
+						<li class="right-block__link">
+							<a href="#">
+								Dane
+							</a>
+						</li>
+						<li class="right-block__link">
+							<a href="#">
+								Kilo
+							</a>
+						</li>
+						<li class="right-block__link">
+							<a href="#">
+								Saratov
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="/main.js"></script>
+</body>
+
+</html>
