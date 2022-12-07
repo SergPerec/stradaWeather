@@ -5,8 +5,8 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="/strada/weather/style.css">
-	<title>Document</title>
+	<link rel="stylesheet" href="/style.css">
+	<title>Weather</title>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
 				<form class="header__form">
 					<input class="form-input" type="text" placeholder="Введите город.">
 					<div class="form-btn">
-						<img src="/strada/weather/img/search.svg" alt="search">
+						<img src="/img/search.svg" alt="search">
 					</div>
 				</form>
 			</div>
@@ -25,23 +25,23 @@
 				<div class="tabs">
 					<div class="tabs__body">
 						<div class="tabs__block" id="tab-01" target="_self">
-							<div class="tabs__block__degree">14&deg;</div>
-							<div class="tabs__block__img">
-								<img src="/strada/weather/img/icon.svg" alt="weather-img">
+							<div class="tabs__block__degree"></div>
+							<div class="tabs__block__icon-box">
+								<img class="tabs__block__icon" alt="weather-icon">
 							</div>
 							<div class="tabs__block__box">
-								<div class="tabs__block__title"></div>
+								<h5 class="tabs__block__title"></h5>
 								<div class="tabs__block__like">
-									<img src="/strada/weather/img/like.svg" alt="like-img">
+									<img src="img/like.svg" alt="like-icon">
 								</div>
 							</div>
 						</div>
 						<div class="tabs__block" id="tab-02">
 							<div class="tabs__block-02 tabs__block__title"></div>
-							<div class="tabs__block-02 tabs__block__temperature">Temperature: 14&deg;</div>
-							<div class="tabs__block-02 tabs__block__feels">Feels like: 10&deg;</div>
-							<div class="tabs__block-02 tabs__block__weather">Weather: Clouds</div>
-							<div class="tabs__block-02 tabs__block__sunrise">Sunrise: 03:21</div>
+							<div class="tabs__block-02 tabs__block__temperature"></div>
+							<div class="tabs__block-02 tabs__block__feels"></div>
+							<div class="tabs__block-02 tabs__block__weather"></div>
+							<div class="tabs__block-02 tabs__block__sunrise"></div>
 							<div class="tabs__block-02 tabs__block__sunset">Sunset: 18:54</div>
 						</div>
 						<div class="tabs__block" id="tab-03">
@@ -54,48 +54,19 @@
 						<a class="tabs__item" href="#tab-03">Forecast</a>
 					</nav>
 				</div>
+
 				<div class="right-block">
 					<div class="right-block__title">
 						Added Locations:
 					</div>
-					<ul class="right-block__list">
-						<li class="right-block__link">
-							<a href="#">
-								Amur
-							</a>
-						</li>
-						<li class="right-block__link">
-							<a href="#">
-								Samara
-							</a>
-						</li>
-						<li class="right-block__link">
-							<a href="#">
-								Bali
-							</a>
-						</li>
-						<li class="right-block__link">
-							<a href="#">
-								Dane
-							</a>
-						</li>
-						<li class="right-block__link">
-							<a href="#">
-								Kilo
-							</a>
-						</li>
-						<li class="right-block__link">
-							<a href="#">
-								Saratov
-							</a>
-						</li>
+					<ul class="right-block__list">						
 					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<script src="/strada/weather/main.js"></script>
+	<script type="module" src="/app/main.js"></script>
 </body>
 
 </html>

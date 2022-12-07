@@ -45,19 +45,26 @@ a {
 }
 
 .tabs__block__degree {
+	display: inline-block;
 	font-size: 70px;
 	font-weight: 400;
 	line-height: 82px;
 	margin: 20px;
 }
 
-.tabs__block__img {
-	width: 80px;
-	height: 60px;
+span.tabs__block__degree {
+	margin-left: -10px;
+}
+
+.tabs__block__icon-box {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin: 40px auto 100px;
+	margin: 40px auto 60px;
+}
+
+.tabs__block__icon {
+	width: 80px;
 }
 
 .tabs__items {
@@ -73,6 +80,7 @@ a {
 	border: 1px solid #000000;
 	color: #000000;
 }
+
 
 .tabs__block {
 	border: 1px solid #000000;
@@ -113,6 +121,7 @@ a {
 .right-block {
 	border: 1px solid #000000;
 	width: 315px;
+	height: 420px;
 }
 
 .right-block__title {
@@ -125,15 +134,22 @@ a {
 	border-bottom: 1px solid #000000;
 }
 
-.right-block__link {
+.right-block__item {
 	list-style-type: none;
 	font-weight: 400;
 	font-size: 24px;
 	line-height: 28px;
 	margin: 15px;
-
+	display: flex;	
+	justify-content: space-between;
 }
 
-.right-block__link>a {
+.favorite-city {
 	color: #000000;
+	cursor: pointer;
+}
+
+.remove-city {
+	cursor: pointer;
+	transform: rotate(45deg);
 }
