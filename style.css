@@ -81,6 +81,11 @@ span.tabs__block__degree {
 	color: #000000;
 }
 
+.tabs__item:hover {
+	color: #fff;
+	background-color: #000;
+}
+
 
 .tabs__block {
 	border: 1px solid #000000;
