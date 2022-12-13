@@ -1,10 +1,10 @@
 import { saveCurrentCity, getCurrentCity, saveFavoriteCitys, getFavoriteCitys } from './storage.js';
-import	{ getDetails } from './getDetails.js';
+import { getDetails } from './getDetails.js';
 
 const serverUrl = 'http://api.openweathermap.org';
 const serverUrlWeather = 'http://api.openweathermap.org/data/2.5/weather';
 const apiKey = 'f660a2fb1e4bad108d6160b7f58c555f';
-const favoriteCity = [];
+const favoriteCity = new Set();
 
 const form = document.querySelector('.header__form');
 form.addEventListener("submit", getCity)
@@ -23,7 +23,6 @@ function getWeather(city) {
 	response
 		.then((data) => data.json())
 		.then((value) => {
-			// console.log(value);
 			const celsiy = Math.floor(value.main.temp);
 			const tempHtml = document.querySelector('.tabs__block__degree');
 				tempHtml.textContent = `${celsiy}°`;
@@ -42,17 +41,16 @@ const likeButton = document.querySelector('.tabs__block__like');
 likeButton.addEventListener("click", addFavoriteCity);
 
 function addFavoriteCity() {
-	const favoriteCityName = document.querySelector('.tabs__block__title');
-	const favoriteCityName2 = favoriteCityName.textContent
-	favoriteCity.push({ name: favoriteCityName2 });
+	const cityName = document.querySelector('.tabs__block__title');
+	const favoriteCityName = cityName.textContent
+	favoriteCity.add(favoriteCityName);
 	saveFavoriteCitys(favoriteCity);
 	render()
 };
 
 function deleteFavoriteCity() {
 	let nameCity = this.previousElementSibling.textContent;
-	let deleteCity = favoriteCity.findIndex(el => el.name === nameCity);
-	favoriteCity.splice(deleteCity, 1)
+	favoriteCity.delete(nameCity);
 	saveFavoriteCitys(favoriteCity);
 	render()
 }
@@ -68,11 +66,11 @@ function render() {
 
 		let div = document.createElement('div');
 		div.className = 'favorite-city';
-		div.textContent = element.name;
+		div.textContent = element;
 		div.addEventListener("click", (event) => {
       event.preventDefault();
-      getWeather(element.name);
-			saveCurrentCity(element.name);
+      getWeather(element);
+			saveCurrentCity(element);
 		});
 
 		let div2 = document.createElement('div');
@@ -92,7 +90,7 @@ window.onload = function() {
   getWeather(cityName);
 	const listCity = getFavoriteCitys();
 	listCity.forEach((e) => {
-		favoriteCity.push(e);
+		favoriteCity.add(e);
 	})
 	render();
 };

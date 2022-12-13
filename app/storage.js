@@ -7,7 +7,7 @@ export function getCurrentCity() {
 }
 
 export function saveFavoriteCitys(favoriteCity) {
-	const citys = JSON.stringify(favoriteCity);
+	const citys = JSON.stringify([...favoriteCity]);
 	localStorage.setItem('FavoriteCitys', citys);
 }
 
