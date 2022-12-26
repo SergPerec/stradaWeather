@@ -10,31 +10,29 @@ const form = document.querySelector('.header__form');
 form.addEventListener("submit", getCity)
 function getCity(el) {
 	el.preventDefault();
-	let city = el.target.querySelector(".form-input").value;
+	const city = el.target.querySelector(".form-input").value;
 	if (!city) return input.value = '';
 	getWeather(city);
 	saveCurrentCity(city);
 	el.target.reset();
 }
 
-function getWeather(city) {
-	const url = `${serverUrlWeather}?q=${city}&appid=${apiKey}&units=metric`;
-	const response = fetch(url);
-	response
-		.then((data) => data.json())
-		.then((value) => {
-			const celsiy = Math.floor(value.main.temp);
-			const tempHtml = document.querySelector('.tabs__block__degree');
-				tempHtml.textContent = `${celsiy}°`;
-
-			const cityHtml = document.querySelectorAll('.tabs__block__title');
-				cityHtml.forEach((elem) => elem.textContent = value.name);
-
-			const icon = document.querySelector('.tabs__block__icon');
-				icon.src = `${serverUrl}/img/w/${value.weather[0].icon}.png`;
-			
-				getDetails(value);	
-		});
+async function getWeather(city) {
+	try {
+		const url = `${serverUrlWeather}?q=${city}&appid=${apiKey}&units=metric`;
+		const response = await fetch(url);
+		const data = await response.json();
+		const celsiy = Math.floor(data.main.temp);
+		const tempHtml = document.querySelector('.tabs__block__degree');
+					tempHtml.textContent = `${celsiy}°`;
+		const cityHtml = document.querySelectorAll('.tabs__block__title');
+					cityHtml.forEach((elem) => elem.textContent = data.name);
+		const icon = document.querySelector('.tabs__block__icon');
+					icon.src = `${serverUrl}/img/w/${data.weather[0].icon}.png`;			
+		getDetails(data);	
+	} catch(err) {
+		alert (err)
+	}
 };
 
 const likeButton = document.querySelector('.tabs__block__like');
